@@ -371,7 +371,7 @@ router.get('/discover', auth, async (req, res) => {
         // Get other users from the same college with complete profiles
         const users = await User.find({
             _id: { $ne: req.user.userId },
-            college: currentUser.college,
+
             // Only show users with at least basic profile info
             name: { $exists: true, $ne: '' },
             photos: { $exists: true, $not: { $size: 0 } }

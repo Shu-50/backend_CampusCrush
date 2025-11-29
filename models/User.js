@@ -20,11 +20,12 @@ const userSchema = new mongoose.Schema({
     },
     college: {
         type: String,
-        required: true
+        required: false,
+        default: ''
     },
     isVerified: {
         type: Boolean,
-        default: false
+        default: true
     },
     verificationToken: {
         type: String,

@@ -36,7 +36,7 @@ router.get('/', auth, async (req, res) => {
 
         // Build query
         const query = {
-            college: currentUser.college,
+
             isReported: false
         };
 
@@ -131,7 +131,7 @@ router.post('/', auth, async (req, res) => {
             userId: req.user.userId,
             content: content.trim(),
             category,
-            college: currentUser.college,
+
             isAnonymous: true,
             reactions: [],
             comments: [],
