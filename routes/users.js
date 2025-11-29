@@ -85,7 +85,7 @@ router.get('/profile', auth, async (req, res) => {
 // Update profile
 router.put('/profile', auth, async (req, res) => {
     try {
-        const { name, bio, age, year, branch, gender, interests, lookingFor, preference, instagram } = req.body;
+        const { name, bio, age, year, branch, gender, interests, lookingFor, preference, instagram, college } = req.body;
 
         // Validate age
         if (age && (age < 18 || age > 30)) {
@@ -121,6 +121,7 @@ router.put('/profile', auth, async (req, res) => {
         if (interests !== undefined) updates.interests = interests;
         if (lookingFor !== undefined) updates.lookingFor = lookingFor;
         if (preference !== undefined) updates.preference = preference;
+        if (college !== undefined) updates.college = college.trim();
         if (instagram !== undefined) {
             updates.instagram = {
                 username: instagram.username ? instagram.username.trim() : '',
